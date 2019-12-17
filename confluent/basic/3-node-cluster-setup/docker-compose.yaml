@@ -65,6 +65,7 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:19092
     volumes:
        - kafka_1_data:/var/lib/kafka/data
+       - kafka_1_log:/var/log/kafka
     restart: always
     extra_hosts:
       - "moby:127.0.0.1"
@@ -82,6 +83,7 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:29092
     volumes:
        - kafka_2_data:/var/lib/kafka/data
+       - kafka_2_log:/var/log/kafka
     restart: always
     extra_hosts:
       - "moby:127.0.0.1"
@@ -99,6 +101,7 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:39092
     volumes:
        - kafka_3_data:/var/lib/kafka/data
+       - kafka_3_log:/var/log/kafka
     restart: always
     extra_hosts:
       - "moby:127.0.0.1"
@@ -112,3 +115,6 @@ volumes:
     kafka_1_data: {}
     kafka_2_data: {}
     kafka_3_data: {}
+    kafka_1_log: {}
+    kafka_2_log: {}
+    kafka_3_log: {}
